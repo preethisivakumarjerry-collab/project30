@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <style>
+    body {
+      background: linear-gradient(135deg,#1d2b64,#f8cdda);
+      padding: 40px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container-box {
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 15px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      color: white;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity:0; transform: translateY(20px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: bold;
+    }
+
+    /* 🔥 Floating label effect */
+    .form-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      border-radius: 0;
+      color: white;
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+      border-bottom: 2px solid #ffd369;
+    }
+
+    label {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      color: #ccc;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+
+    .form-control:focus + label,
+    .form-control:not(:placeholder-shown) + label {
+      top: -10px;
+      font-size: 12px;
+      color: #ffd369;
+    }
+
+    /* 🔥 Radio & Checkbox */
+    .form-check-input:checked {
+      background-color: #ffd369;
+      border-color: #ffd369;
+    }
+
+    /* 🔥 Button */
+    .btn-custom {
+      background: linear-gradient(45deg,#ff6a00,#ee0979);
+      border: none;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255,255,255,0.5);
+    }
+
+    /* File input */
+    .form-control-file {
+      color: #ccc;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container-box">
+
+  <h2>Form</h2>
+
+  <form>
+
+    <!-- Name -->
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder=" " required>
+      <label>Name</label>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <input type="email" class="form-control" placeholder=" " required>
+      <label>Email</label>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <input type="password" class="form-control" placeholder=" " required>
+      <label>Password</label>
+    </div>
+
+    <!-- Select -->
+    <div class="form-group">
+      <select class="form-control">
+        <option hidden>Select Course</option>
+        <option>BCA</option>
+        <option>BSc</option>
+        <option>BCom</option>
+      </select>
+    </div>
+
+    <!-- Radio -->
+    <div class="form-group">
+      <label style="position:static;">Gender</label><br>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name="g"> Male
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name="g"> Female
+      </div>
+    </div>
+
+    <!-- Checkbox -->
+    <div class="form-group">
+      <label style="position:static;">Skills</label><br>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input"> HTML
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input"> CSS
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input"> JS
+      </div>
+    </div>
+
+    <!-- Textarea -->
+    <div class="form-group">
+      <textarea class="form-control" rows="3" placeholder=" "></textarea>
+      <label>Message</label>
+    </div>
+
+    <!-- File -->
+    <div class="form-group">
+      <label style="position:static;">Upload File</label>
+      <input type="file" class="form-control-file">
+    </div>
+
+    <!-- Button -->
+    <button type="submit" class="btn btn-custom btn-block">Submit</button>
+
+  </form>
+
+</div>
+
+</body>
+</html>
